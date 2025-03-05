@@ -1,0 +1,368 @@
+:root {
+    --background-color-body: #eef2fa22; /* Color de fondo suave basado en el primario */
+    --background-color: #dae2f0; /* Color de fondo más oscuro */
+    --light-background-color: #f2f7fd; /* Tono más claro para el fondo */
+    --text-color: #333; /* Color de texto primario */
+    --primary-color: #6485c1; /* Color primario */
+    --primary-dark-color: #4f6ca0; /* Color primario más oscuro */
+    --hover-table-color: #ccd9f3; /* Color primario */
+    --hover-color: #3e5780; /* Color para hover, más oscuro */
+    --border-color: #b8c7e0; /* Color de borde derivado del primario */
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    src: url('../fonts/NotoSans-Regular.ttf') format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*--------------------------------------------------*/
+/*------------  M O D A L  S T Y L E S  ------------*/
+/*--------------------------------------------------*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 500px; /* Ancho fijo */
+    height: 600px; /* Alto fijo */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Permite scroll vertical */
+    /*padding: 20px; Espaciado interno */
+    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+}
+
+/* Oculta la barra de scroll en navegadores WebKit (Chrome, Edge, etc.) */
+.modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* html {
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    border-radius: 8px;
+} */
+
+body {
+    font-family: 'NotoSans', sans-serif;
+    background-color: var(--background-color-body);
+    color: var(--text-color);
+    margin: 0;
+    width: 500px;
+    border-radius: 8px; /* Bordes redondeados para todo el cuerpo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.container{
+    padding: 20px;
+}
+
+/*--------------------------------------------------*/
+/*-----------  T I T L E S  S T Y L E S  -----------*/
+/*--------------------------------------------------*/
+h1, h2 {
+    color: var(--primary-color);
+    text-align: center;
+    line-height: 1.4; /* Mejora la legibilidad */
+    margin-bottom: 20px; /* Espaciado inferior para separación visual */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+
+h1 {
+    font-size: 2.5em; /* Tamaño prominente para h1 */
+    font-weight: bold; /* Peso de fuente para destacar */
+    border-bottom: 2px solid var(--primary-color); /* Línea inferior para estilo */
+    padding-bottom: 10px; /* Espaciado para la línea inferior */
+    padding: 10px 0 10px 10px; /* Espaciado interno para el fondo */
+}
+
+h2 {
+    font-size: 2em; /* Tamaño ligeramente menor para h2 */
+    font-weight: 600; /* Menos prominente que h1 */
+    padding: 8px; /* Espaciado interno */
+}
+
+/*--------------------------------------------------*/
+/*-----  M I S C E L A N E O U S  S T Y L E S  -----*/
+/*--------------------------------------------------*/
+hr {
+    border: 1px solid var(--border-color);
+}
+
+code{
+    font-size:medium;
+}
+
+/*--------------------------------------------------*/
+/*--------------  N A V  S T Y L E S  --------------*/
+/*--------------------------------------------------*/
+nav {
+    padding: 0 0 16px 0;
+    border-radius: 8px 8px; /* Bordes superiores redondeados */
+    display: flex;
+    column-gap: 8px;
+    justify-content: space-between; /* Espacio entre los botones */
+    align-items: center;
+    overflow: hidden; /* Elimina esquinas rectas */
+    transition: opacity 0.3s ease-in-out;
+}
+
+nav .nav-button {
+    flex: 1;
+    background-color: var(--primary-color); /* Color de fondo del botón */
+    color: white;
+    text-align: center;
+    padding: 14px 4px;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transición para la sombra */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    display: block; /* Asegura que el enlace ocupe todo el área del botón */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra inicial suave */
+}
+
+nav .nav-button.active {
+    font-weight: bold;
+    background-color: var(--primary-dark-color);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra más prominente para el botón activo */
+}
+
+nav .nav-button:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el cursor */
+}
+
+nav.fixed-nav {
+    opacity: 0;
+    cursor: auto;
+}
+
+/*--------------------------------------------------*/
+/*-----------  H A M B U R G E R  M E N U  ---------*/
+/*--------------------------------------------------*/
+.hamburger-menu {
+    /* display: none; */
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hamburguer-menu-fadeIn {
+    opacity: 1;
+}
+.hamburguer-menu-fadeOut {
+    opacity: 0;
+    cursor: auto;
+}
+
+.hamburger-icon {
+    font-size: 12px;
+    cursor: pointer;
+    background-color: var(--primary-dark-color);
+    color: white;
+    padding: 10px;
+    border-radius: 0 0 0 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    -2px 2px 4px rgba(0, 0, 0, 0.1),
+    2px -2px 4px rgba(0, 0, 0, 0.1),
+    -2px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 37px;
+    right: 0;
+    background-color: var(--light-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown-content a {
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    color: var(--text-color);
+}
+
+.dropdown-content a.active {
+    background-color: var(--primary-dark-color);
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--hover-color);
+    color: white;
+}
+
+/* Mostrar el dropdown cuando el ratón está sobre el icono de hamburguesa */
+.hamburger-menu:hover .dropdown-content {
+    display: flex;
+    opacity: 1;
+}
+
+
+/*--------------------------------------------------*/
+/*-----  I N D E X  B U T T O N S  S T Y L E S  ----*/
+/*--------------------------------------------------*/
+.button-container {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.index-button {
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: medium;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Separación entre botones */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de elevación */
+}
+
+.index-button:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al pasar el cursor */
+}
+
+/*--------------------------------------------------*/
+/*------------  T A B L E  S T Y L E S  ------------*/
+/*--------------------------------------------------*/
+table {
+    width: 100%;
+    border-collapse: collapse; /* Colapsamos bordes para un mejor diseño */
+    margin: 20px 0;
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Elimina esquinas rectas */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+        -2px 2px 4px rgba(0, 0, 0, 0.1),
+        2px -2px 4px rgba(0, 0, 0, 0.1),
+        -2px -2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+th, td {
+    border: none; /* Eliminamos los bordes entre celdas */
+    padding: 12px 15px; /* Aumentamos el padding para mayor espacio */
+    text-align: left;
+    vertical-align: middle; /* Alineación vertical central */
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-background-color); /* Color de fondo más claro */
+}
+
+tr:nth-child(odd) {
+    background-color: var(--background-color); /* Blanco para alternar */
+}
+
+th {
+    background-color: var(--primary-color); /* Color primario */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase; /* Texto en mayúsculas para encabezados */
+    letter-spacing: 0.05em; /* Espaciado de letras para claridad */
+}
+
+tr:hover {
+    background-color: var(--hover-table-color); /* Sutil cambio de color al pasar el ratón */
+}
+
+td:first-child {
+    font-weight: bold; /* Destacar la primera columna */
+}
+
+td, th {
+    border-bottom: 1px solid #e0e6ed; /* Línea inferior para separación */
+}
+
+/*--------------------------------------------------*/
+/*---------  P L A I N  T E X T  S T Y L E  --------*/
+/*--------------------------------------------------*/
+pre {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+    -2px 2px 4px rgba(0, 0, 0, 0.1),
+    2px -2px 4px rgba(0, 0, 0, 0.1),
+    -2px -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------*/
+/*---------------  T O P  B U T T O N  -------------*/
+/*--------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 7px 11px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px 8px 0 8px;
+    box-shadow: -1px -1px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.fadeIn {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+.fadeOut {
+    opacity: 0;
+    cursor: auto;
+    transition: opacity 0.5s ease-out;
+}
+
+/*--------------------------------------------------*/
+/*-----------  F O O T E R  S T Y L E S  -----------*/
+/*--------------------------------------------------*/
+footer {
+    background-color: var(--primary-dark-color);
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.1);
+}

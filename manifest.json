@@ -1,0 +1,27 @@
+{
+    "name":"Best Practice",
+    "description":"Extension for managing metadata nomenclatures in project.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "author": "Manuel Villén",
+    "action":{
+        "default_title": "Best Practice"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "html/*",
+                "styles.css",
+                "service.js"
+            ],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}

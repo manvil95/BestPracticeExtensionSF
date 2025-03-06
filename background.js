@@ -9,6 +9,8 @@ chrome.action.onClicked.addListener((tab) => {
                     files: ['content.js']
                 }).then(() => {
                     console.log("Script inyectado correctamente.");
+                    // Envía el mensaje nuevamente después de inyectar el script
+                    chrome.tabs.sendMessage(tab.id, { action: "toggleModal" });
                 }).catch((error) => {
                     console.error("Error ejecutando el script: ", error);
                 });

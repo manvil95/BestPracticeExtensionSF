@@ -1,112 +1,72 @@
-// Evita redeclarar variables si el script ya está inyectado
-if (typeof modalOverlay === 'undefined') {
-    let modalOverlay = null; // Referencia al modal
-    let isModalOpen = false; // Estado del modal
+let modalOverlay = null; // Referencia al modal
+let isModalOpen = false; // Estado del modal
 
-    // Función para crear el modal
-    function createModal() {
-        modalOverlay = document.createElement('div');
-        modalOverlay.classList.add('modal-overlay');
+// Función para crear el modal
+function createModal() {
+    if (isModalOpen) return; // Si el modal ya está abierto, no hacer nada
 
-        const modalContent = document.createElement('div');
-        modalContent.classList.add('modal-content');
+    // Crear el contenedor del modal
+    modalOverlay = document.createElement('div');
+    modalOverlay.style.position = 'fixed';
+    modalOverlay.style.top = '10px';
+    modalOverlay.style.right = '10px';
+    modalOverlay.style.width = '500px';
+    modalOverlay.style.height = '500px';
+    modalOverlay.style.zIndex = '2147483647';
+    modalOverlay.style.borderRadius = '8px';
+    modalOverlay.style.display = 'fixed';
+    modalOverlay.classList.add('modal-overlay');
 
-        function closeModal() {
-            if (document.body.contains(modalOverlay)) {
-                document.body.removeChild(modalOverlay);
-                isModalOpen = false; // Actualiza el estado
-            }
+    // Crear el iframe para el contenido del modal
+    const iframe = document.createElement('iframe');
+    iframe.src = chrome.runtime.getURL('html/index.html');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.borderRadius = '8px';
+
+    // Añadir el iframe al modal
+    modalOverlay.appendChild(iframe);
+
+    // Función para cerrar el modal
+    function closeModal() {
+        if (modalOverlay && document.body.contains(modalOverlay)) {
+            document.body.removeChild(modalOverlay);
+            modalOverlay = null;
+            isModalOpen = false;
+            // Eliminar el event listener del documento
+            document.removeEventListener('click', handleClickOutside);
         }
-
-        // Función para cargar contenido en el modal
-        function loadContent(url) {
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    modalContent.innerHTML = data; // Reemplaza el contenido del modal
-                    injectStyles(); // Inyecta estilos
-                    updateLinks(modalContent); // Actualiza los enlaces
-                    attachLinkHandlers(modalContent); // Adjunta manejadores de clic a los enlaces
-                })
-                .catch(error => {
-                    console.error('Error cargando el archivo:', error);
-                });
-        }
-
-        // Cargar index.html la primera vez
-        const initialUrl = chrome.runtime.getURL('html/index.html');
-        loadContent(initialUrl);
-
-        // Adjuntar manejadores de clic a los enlaces
-        function attachLinkHandlers(container) {
-            container.addEventListener('click', (event) => {
-                const link = event.target.closest('a');
-                if (link && link.href) {
-                    event.preventDefault(); // Evita la navegación predeterminada
-                    const href = link.href;
-                    loadContent(href); // Carga el contenido del enlace en el modal
-                }
-            });
-        }
-
-        // Cerrar el modal al hacer clic fuera del contenido
-        modalOverlay.addEventListener('click', (event) => {
-            if (event.target === modalOverlay) {
-                closeModal();
-            }
-        });
-
-        modalOverlay.appendChild(modalContent);
-        document.body.appendChild(modalOverlay);
-        isModalOpen = true; // Actualiza el estado
     }
 
-    function injectStyles() {
-        const styleUrl = chrome.runtime.getURL('styles.css');
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = styleUrl;
-        document.head.appendChild(link);
-    }
-
-    function updateLinks(container) {
-        // Genera las rutas absolutas para los archivos HTML
-        const fieldsUrl = chrome.runtime.getURL('html/fields.html');
-        const metadataUrl = chrome.runtime.getURL('html/metadata.html');
-        const apexUrl = chrome.runtime.getURL('html/apex.html');
-        const branchingUrl = chrome.runtime.getURL('html/branching.html');
-
-        // Actualiza los enlaces
-        const fieldsLink = container.querySelector('#fields-link');
-        const metadataLink = container.querySelector('#metadata-link');
-        const apexLink = container.querySelector('#apex-link');
-        const branchingLink = container.querySelector('#branching-link');
-
-        if (fieldsLink) fieldsLink.href = fieldsUrl;
-        if (metadataLink) metadataLink.href = metadataUrl;
-        if (apexLink) apexLink.href = apexUrl;
-        if (branchingLink) branchingLink.href = branchingUrl;
-    }
-
-    // Escucha mensajes desde background.js
-    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-        if (message.action === "toggleModal") {
-            if (isModalOpen) {
-                // Cierra el modal si ya está abierto
-                if (modalOverlay && document.body.contains(modalOverlay)) {
-                    document.body.removeChild(modalOverlay);
-                    modalOverlay = null;
-                }
-                isModalOpen = false;
-            } else {
-                // Abre el modal si está cerrado
-                createModal();
-            }
+    // Función para manejar clics fuera del iframe
+    function handleClickOutside(event) {
+        // Verifica si el clic ocurrió fuera del iframe
+        if (modalOverlay && !modalOverlay.contains(event.target)) {
+            closeModal();
         }
-    });
+    }
+
+    // Añadir el modal al body
+    document.body.appendChild(modalOverlay);
+    isModalOpen = true; // Actualiza el estado
+
+    // Escuchar clics en el documento para cerrar el modal
+    document.addEventListener('click', handleClickOutside);
 }
+
+// Escucha mensajes desde background.js
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === "toggleModal") {
+        if (isModalOpen) {
+            // Cierra el modal si ya está abierto
+            if (modalOverlay && document.body.contains(modalOverlay)) {
+                document.body.removeChild(modalOverlay);
+                modalOverlay = null;
+            }
+            isModalOpen = false;
+        } else {
+            // Abre el modal si está cerrado
+            createModal();
+        }
+    }
+});

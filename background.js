@@ -6,7 +6,7 @@ chrome.action.onClicked.addListener((tab) => {
             if (error.message.includes("Receiving end does not exist")) {
                 chrome.scripting.executeScript({
                     target: { tabId: tab.id },
-                    files: ['content.js']
+                    files: ['js/content.js']
                 }).then(() => {
                     console.log("Script inyectado correctamente.");
                     // Envía el mensaje nuevamente después de inyectar el script

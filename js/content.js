@@ -1,5 +1,6 @@
 let modalOverlay = null; // Referencia al modal
 let isModalOpen = false; // Estado del modal
+let isMouseOverIframe = false; // Estado del ratón sobre el iframe
 
 // Función para crear el modal
 function createModal() {
@@ -24,6 +25,17 @@ function createModal() {
     iframe.style.height = '100%';
     iframe.style.borderRadius = '8px';
 
+    // Event listeners para detectar cuándo el ratón entra y sale del iframe
+    iframe.addEventListener('mouseenter', () => {
+        isMouseOverIframe = true;
+        document.body.style.overflow = 'hidden'; // Deshabilitar scroll en la página principal
+    });
+
+    iframe.addEventListener('mouseleave', () => {
+        isMouseOverIframe = false;
+        document.body.style.overflow = ''; // Restablecer scroll en la página principal
+    });
+
     // Añadir el iframe al modal
     modalOverlay.appendChild(iframe);
 
@@ -35,6 +47,7 @@ function createModal() {
             isModalOpen = false;
             // Eliminar el event listener del documento
             document.removeEventListener('click', handleClickOutside);
+            document.body.style.overflow = ''; // Restablecer scroll en la página principal
         }
     }
 

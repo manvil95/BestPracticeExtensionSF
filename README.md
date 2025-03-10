@@ -1,8 +1,10 @@
-# Salesforce Best Practices Browser Extension
 
-A browser extension designed to help Salesforce developers and teams follow best practices and naming conventions. Organized into intuitive tabs, this tool provides quick access to guidelines, examples, and strategies for maintaining high-quality and maintainable Salesforce projects.
 
----
+#  <img title="xx" src="./icons/icon.png" width="80px"> SF Best Practices Browser Extension
+
+> [!IMPORTANT] 
+> A browser extension designed to help Salesforce developers and teams follow best practices and naming conventions. Organized into intuitive tabs, this tool provides quick access to guidelines, examples, and strategies for maintaining high-quality and maintainable Salesforce projects.
+
 
 ## Features
 
@@ -18,7 +20,6 @@ A browser extension designed to help Salesforce developers and teams follow best
 - **Tab 4: Branching Strategies**  
   Recommended branching strategies for version control in Salesforce projects, including Git workflows and deployment tips.
 
----
 
 ## Installation
 
@@ -28,7 +29,6 @@ A browser extension designed to help Salesforce developers and teams follow best
 4. Click "Load unpacked" and select the extension folder.
 5. The extension will appear in your browser's toolbar.
 
----
 
 ## Usage
 
@@ -36,7 +36,7 @@ A browser extension designed to help Salesforce developers and teams follow best
 - Navigate through the tabs to access the relevant best practices and naming conventions.
 - Use the examples and guidelines to improve your Salesforce development workflow.
 
----
+
 
 ## Contributing
 
@@ -48,13 +48,11 @@ Contributions are welcome! If you have suggestions for additional best practices
 4. Push to the branch (`git push origin feature/YourFeatureName`).
 5. Open a pull request.
 
----
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
 
 ## Contact
 

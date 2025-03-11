@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const nav = document.querySelector("nav");
     const hamburgerMenu = document.getElementById("hamburgerMenu");
     const buInput = document.getElementById("bu-input");
-
+    const buToggle = document.getElementById("buToggle");
+    const buContainer = document.getElementById("buContainer");
+        
     // Almacenar el valor original de {{BU}} en un atributo data-original
     const buElements = document.querySelectorAll("[data-bu]");
     buElements.forEach((element) => {
@@ -73,10 +75,12 @@ document.addEventListener("DOMContentLoaded", function () {
             nav.classList.add("fixed-nav");
             hamburgerMenu.classList.add("hamburguer-menu-fadeIn");
             hamburgerMenu.classList.remove("hamburguer-menu-fadeOut");
+            buToggle.classList.remove("hidden");
         } else {
             nav.classList.remove("fixed-nav");
             hamburgerMenu.classList.add("hamburguer-menu-fadeOut");
             hamburgerMenu.classList.remove("hamburguer-menu-fadeIn");
+            buToggle.classList.add("hidden"); // Ocultar el icono
         }
 
         if (window.scrollY > navHeight) {

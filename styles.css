@@ -61,7 +61,7 @@ body {
 }
 
 .container{
-    padding: 20px 10px;
+    padding: 20px 20px;
     box-sizing: border-box
 }
 
@@ -214,9 +214,25 @@ nav.fixed-nav {
     box-shadow: inset 3px 0 var(--sf-color-tab-selected-strong);
 }
 
+.dropdown-content a.active:first-child {
+    border-radius: 5px 0 0 0;
+}
+
+.dropdown-content a.active:last-child {
+    border-radius: 0 0 0 5px;
+}
+
 .dropdown-content a:hover {
     color: var(--sf-color-tab-selected);
     box-shadow: inset 3px 0 var(--sf-color-tab-selected);
+}
+
+.dropdown-content a:hover:first-child {
+    border-radius: 5px 0 0 0;
+}
+
+.dropdown-content a:hover:last-child {
+    border-radius: 0 0 0 5px;
 }
 
 /* Mostrar el dropdown cuando el ratón está sobre el icono de hamburguesa */

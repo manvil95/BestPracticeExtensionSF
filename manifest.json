@@ -9,7 +9,7 @@
         "default_icon": "icons/icon.png"
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "service.js"
     },
     "permissions": [
         "scripting",

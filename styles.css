@@ -32,16 +32,12 @@
 /*------------  M O D A L  S T Y L E S  ------------*/
 /*--------------------------------------------------*/
 
-iframe {
-    overflow-y: auto;
-    scrollbar-width: none;
-}
-
 html, body {
     margin: 0;
     padding: 0;
     height: max-content;
     width: 500px;
+    user-select: none; /* Desactiva la selección de texto */
 }
 
 html {
@@ -176,7 +172,7 @@ nav.fixed-nav {
 .hamburger-icon {
     font-size: 12px;
     cursor: pointer;
-    background-color: var(--primary-dark-color);
+    background-color: var(--sf-color-tab-selected);
     color: white;
     padding: 10px;
     border-radius: 0 0 0 5px;
@@ -350,7 +346,7 @@ pre {
     bottom: 0;
     right: 0;
     padding: 7px 11px;
-    background-color: var(--primary-color);
+    background-color: var(--sf-color-button);
     color: white;
     border: none;
     border-radius: 8px 8px 0 8px;

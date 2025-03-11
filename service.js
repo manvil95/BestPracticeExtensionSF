@@ -38,6 +38,33 @@ document.addEventListener("DOMContentLoaded", function () {
         updateBUValue(buValue); // Actualizar los elementos con el nuevo valor
     });
 
+    // Función para ajustar el ancho del input
+    function adjustInputWidth() {
+        const tempSpan = document.createElement("span");
+        tempSpan.style.visibility = "hidden"; // Ocultar el span
+        tempSpan.style.whiteSpace = "pre"; // Mantener el espaciado
+        tempSpan.style.fontSize = window.getComputedStyle(buInput).fontSize; // Mismo tamaño de fuente
+        tempSpan.style.fontFamily = window.getComputedStyle(buInput).fontFamily; // Misma fuente
+        tempSpan.textContent = buInput.value || buInput.placeholder; // Usar el valor o el placeholder
+
+        document.body.appendChild(tempSpan); // Añadir el span al DOM
+        const textWidth = tempSpan.offsetWidth; // Calcular el ancho del texto
+        document.body.removeChild(tempSpan); // Eliminar el span del DOM
+
+        // Ajustar el ancho del input (solo el ancho del texto, sin padding)
+        buInput.style.width = `${textWidth}px`;
+
+        // Forzar el redibujado del input (para evitar problemas de renderizado)
+        buInput.style.width = "auto"; // Resetear el ancho
+        buInput.style.width = `${textWidth}px`; // Aplicar el nuevo ancho
+    }
+
+    // Ajustar el ancho inicial al tamaño del placeholder
+    adjustInputWidth();
+
+    // Escuchar cambios en el input
+    buInput.addEventListener("input", adjustInputWidth);
+    
     // Resto del código existente...
     window.addEventListener("scroll", function () {
         const navHeight = nav.offsetHeight;

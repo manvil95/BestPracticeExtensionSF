@@ -1,0 +1,32 @@
+# Ignorar archivos de configuración local
+.env
+*.local
+
+# Ignorar dependencias de Node.js (si las usas)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Ignorar archivos generados automáticamente
+dist/
+build/
+*.log
+*.tmp
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+# Ignorar archivos de caché
+.cache/
+
+# Ignorar archivos de extensión empaquetados
+*.crx
+*.pem

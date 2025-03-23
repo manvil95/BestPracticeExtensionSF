@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Objects & Related Metadata</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <a href="object.html" class="nav-button">Objects</a>
+                <a href="metadata.html" class="nav-button">Metadata</a>
+                <a href="apex.html" class="nav-button">Apex & LWC</a>
+                <a href="branching.html" class="nav-button active">Branching</a>
+            </nav>
+            <div id="hamburgerMenu" class="hamburger-menu hamburguer-menu-fadeOut">
+                <div class="hamburger-icon">&#9776;</div>
+                <div class="dropdown-content">
+                    <a href="object.html">Objects</a>
+                    <a href="metadata.html">Metadata</a>
+                    <a href="apex.html">Apex & LWC</a>
+                    <a href="branching.html" class="active">Branching</a>
+                </div>
+            </div>
+            <h1>Branching Strategies</h1>
+            <h2>Branch Naming</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>NAMING</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Feature</td>
+                        <td>
+                            <code><b>feature/</b>BranchName</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hotfix</td>
+                        <td>
+                            <code><b>hotfix/</b>BranchName</code>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button id="backToTop" class="back-to-top fadeOut">↑</button>
+        <script src="../service.js"></script> 
+        <footer>
+            <p>© Manuel Villén, 2025</p>
+        </footer>
+    </body>
+</html>

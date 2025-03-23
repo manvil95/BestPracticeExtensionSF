@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Apex</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <a href="object.html" class="nav-button">Objects</a>
+                <a href="metadata.html" class="nav-button">Metadata</a>
+                <a href="apex.html" class="nav-button active">Apex & LWC</a>
+                <a href="branching.html" class="nav-button">Branching</a>
+            </nav>
+            <div id="hamburgerMenu" class="hamburger-menu hamburguer-menu-fadeOut">
+                <div class="hamburger-icon">&#9776;</div> <!-- Ícono de hamburguesa -->
+                <div class="dropdown-content">
+                    <a href="object.html">Objects</a>
+                    <a href="metadata.html">Metadata</a>
+                    <a href="apex.html" class="active">Apex & LWC</a>
+                    <a href="branching.html">Branching</a>
+                </div>
+            </div>
+            <!-- Icono desplegable -->
+            <div class="bu-toggle hidden" id="buToggle">BU</div>
+            <!-- Contenedor del input -->
+            <div class="bu-container" id="buContainer">
+                <input type="text" id="bu-input" placeholder="Enter business unit">
+            </div>
+            <h1>Apex & LWC</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>API NAME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Trigger</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>TRG</b>_TriggerName</td>
+                    </tr>
+                    <tr>
+                        <td>Trigger Handler</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>TRG</b>_ClassName<b>Handler</b></td>
+                    </tr>
+                    <tr>
+                        <td>Helper</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>TRG</b>_ClassName<b>Helper</b></td>
+                    </tr>
+                    <tr>
+                        <td>Regular Class</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_ClassName</td>
+                    </tr>
+                    <tr>
+                        <td>Batch</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>Batch</b>_ClassName</td>
+                    </tr>
+                    <tr>
+                        <td>Batch Test</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>Batch</b>_ClassName_<b>Test</b></td>
+                    </tr>
+                    <tr>
+                        <td>Scheduler</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>SCH</b>_ClassName</td>
+                    </tr>
+                    <tr>
+                        <td>Interface</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>INT</b>_InterfaceName</td>
+                    </tr>
+                    <tr>
+                        <td>Test</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_ClassAPIName_<b>Test</b></td>
+                    </tr>
+                    <tr>
+                        <td>Test Suite</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_TestSuiteName_<b>TestSuite</b></td>
+                    </tr>
+                    <tr>
+                        <td>Visualforce Page</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>VFP</b>_PageName</td>
+                    </tr>
+                    <tr>
+                        <td>Visualforce Controller</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>VFC</b>_ControllerName</td>
+                    </tr>
+                    <tr>
+                        <td>Visualforce Controller Test</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_ControllerAPIName_<b>Test</b></td>
+                    </tr>
+                    <tr>
+                        <td>LWC</td>
+                        <td><b><span data-bu>{{BU}}</span>LC</b>ComponentName</td>
+                    </tr>
+                    <tr>
+                        <td>LWC Apex Class</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>LCC</b>_ComponentName</td>
+                    </tr>
+                    <tr>
+                        <td>LWC Apex Test</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>LCC</b>_ComponentName_<b>Test</b></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>NAME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Classes</td>
+                        <td>
+                            <b>UpperCamelCase</b><hr>
+                            CaseHelper
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Methods</td>
+                        <td>
+                            <b>lowerCamelCase</b><hr>
+                            deleteCustomer
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Variables</td>
+                        <td>
+                            <b>lowerCamelCase</b><hr>
+                            customerWarrantyCount
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Constants</td>
+                        <td>
+                            <b>SNAKE_CASE</b><hr>
+                            MAX_CHARACTERS
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Test Class Template</h2>
+            <pre><code>
+@isTest
+private class <span data-bu>{{BU}}</span>_HelperTest {
+    
+    @testSetup
+    static void setup() {
+
+    }
+    
+    @isTest
+    static void testMethod1() {
+        
+        Test.start()
+        
+        Test.stop();
+        
+        Assert.Equal(expected, actual, message);
+    }
+}</code></pre>
+        </div>
+        <button id="backToTop" class="back-to-top fadeOut">↑</button>
+        <script src="../service.js"></script>    
+        <footer>
+            <p>© Manuel Villén, 2025</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Metadata</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <a href="object.html" class="nav-button">Objects</a>
+                <a href="metadata.html" class="nav-button active">Metadata</a>
+                <a href="apex.html" class="nav-button">Apex & LWC</a>
+                <a href="branching.html" class="nav-button">Branching</a>
+            </nav>
+            <div id="hamburgerMenu" class="hamburger-menu hamburguer-menu-fadeOut">
+                <div class="hamburger-icon">&#9776;</div> <!-- Ícono de hamburguesa -->
+                <div class="dropdown-content">
+                    <a href="object.html">Objects</a>
+                    <a href="metadata.html" class="active">Metadata</a>
+                    <a href="apex.html">Apex & LWC</a>
+                    <a href="branching.html">Branching</a>
+                </div>
+            </div>
+            <!-- Icono desplegable -->
+            <div class="bu-toggle hidden" id="buToggle">BU</div>
+            <!-- Contenedor del input -->
+            <div class="bu-container" id="buContainer">
+                <input type="text" id="bu-input" placeholder="Enter business unit">
+            </div>
+            <h1>Metadata</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>API NAME / LABEL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Animation Rule</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>AR</b>_AnimationName</td>
+                    </tr>
+                    <tr>
+                        <td>Approval Process</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>AP</b>_ApprovalProcessName</td>
+                    </tr>
+                    <tr>
+                        <td>Business Process</td>
+                        <td>
+                            <b><span data-bu>{{BU}}</span></b>_<b>BP</b>_BusinessProcessName<hr>
+                            <b><span data-bu>{{BU}}</span></b> Name <b>Business Process</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Connected App</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>CA</b>_ConnectedAppName</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Label</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_LabelName</td>
+                    </tr>
+                    <tr>
+                        <td>Custom/Quick Action</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_ActionName_<b>Action</b></td>
+                    </tr>
+                    <tr>
+                        <td>Custom Metadata</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>CMT</b>_CustomMetadataName</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Setting</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>CS</b>_CustomSettingName</td>
+                    </tr>
+                    <tr>
+                        <td>Email Template</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_EmailTemplateName</td>
+                    </tr>
+                    <tr>
+                        <td>Entitlement</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_EntitlementName</td>
+                    </tr>
+                    <tr>
+                        <td>Event Lightning</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>LEV</b>_EventName</td>
+                    </tr>
+                    <tr>
+                        <td>External Credential</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>EC</b>_ExtCredentialName</td>
+                    </tr>
+                    <tr>
+                        <td>Flow</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>FLW</b>_FlowName</td>
+                    </tr>
+                    <tr>
+                        <td>Global Value Set</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>Core</b>_PicklistName<hr>
+                        <b><span data-bu>{{BU}}</span></b> <b>Core</b> Picklist Name</td>
+                    </tr>
+                    <tr>
+                        <td>Group</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_GroupName
+                    </tr>
+                    <tr>
+                        <td>Named Credential</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>NC</b>_NamedCredentialName</td>
+                    </tr>
+                    <tr>
+                        <td>Notification Type</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_NotificationTypeName</td>
+                    </tr>
+                    <tr>
+                        <td>Permission Set</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>PS</b>_PermissionSetName</td>
+                    </tr>
+                    <tr>
+                        <td>Permission Set Group</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>PSG</b>_PermissionSetGroupName</td>
+                    </tr>
+                    <tr>
+                        <td>Process Builder</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>PB</b>_ProcessBuilderName</td>
+                    </tr>
+                    <tr>
+                        <td>Path</td>
+                        <td><b><span data-bu>{{BU}}</span>_Core_Object_RecordType</b></td>
+                    </tr>
+                    <tr>
+                        <td>Role</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_RoleName</td>
+                    </tr>
+                    <tr>
+                        <td>Static Resource</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>SR</b>_StaticResourceName</td>
+                    </tr>
+                    <tr>
+                        <td>Tab</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_TabName</td>
+                    </tr>
+                    <tr>
+                        <td>Workflow</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>WF</b>_ObjectNameProcess</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button id="backToTop" class="back-to-top fadeOut">↑</button>
+        <script src="../service.js"></script> 
+        <footer>
+            <p>© Manuel Villén, 2025</p>
+        </footer>
+    </body>
+</html>

@@ -6,10 +6,8 @@
     "author": "Manuel Villén",
     "action":{
         "default_title": "Best Practice",
-        "default_icon": "icons/icon.png"
-    },
-    "background": {
-        "service_worker": "background.js"
+        "default_icon": "icons/icon.png",
+        "default_popup": "html/index.html"
     },
     "permissions": [
         "scripting",
@@ -20,7 +18,7 @@
             "resources": [
                 "html/*",
                 "styles.css",
-                "js/*",
+                "service.js",
                 "fonts/NotoSans-Regular.ttf"
             ],
             "matches": ["<all_urls>"]

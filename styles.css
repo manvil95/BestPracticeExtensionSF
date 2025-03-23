@@ -32,15 +32,12 @@
 /*------------  M O D A L  S T Y L E S  ------------*/
 /*--------------------------------------------------*/
 
-iframe {
-    overflow-y: auto;
-    scrollbar-width: none;
-}
-
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: max-content;
+    width: 500px;
+    user-select: none; /* Desactiva la selección de texto */
 }
 
 html {
@@ -55,21 +52,21 @@ body {
     background-color: var(--sf-color-background-section);
     color: var(--text-color);
     margin: 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* border-radius: 8px; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .container{
-    padding: 20px;
+    padding: 20px 20px;
     box-sizing: border-box
 }
 
 .container-section{
     background-color: var(--sf-color-background);
-    padding: 5px 5px;
+    padding: 5px 10px;
     box-sizing: border-box;
     border-radius: 8px;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 /*--------------------------------------------------*/
@@ -85,6 +82,7 @@ h1, h2 {
 h1 {
     color: var(--sf-color-title-vivid);
     font-size: 2.5em; /* Tamaño prominente para h1 */
+    margin-bottom: 20px; /* Espaciado inferior para separación visual */
     padding-bottom: 10px; /* Espaciado para la línea inferior */
     padding: 10px 0 10px 10px; /* Espaciado interno para el fondo */
 }
@@ -93,7 +91,9 @@ h2 {
     color: var(--sf-color-title);
     font-size: 2em; /* Tamaño ligeramente menor para h2 */
     font-weight: 600; /* Menos prominente que h1 */
+    margin: 5px 0 10px 0; /* Espaciado inferior para separación visual */
     padding: 8px; /* Espaciado interno */
+
 }
 
 /*--------------------------------------------------*/
@@ -105,6 +105,74 @@ hr {
 
 code{
     font-size:medium;
+}
+
+/*--------------------------------------------------*/
+/*-----  B U S I N E S S  U N I T  B U T T O M  ----*/
+/*--------------------------------------------------*/
+.bu-toggle {
+    position: fixed;
+    top: 38px; /* Debajo del menú de la hamburguesa */
+    right: 0px;
+    z-index: 999;
+    background-color: var(--sf-color-tab-selected);
+    color: white;
+    border: 1px solid #dddbda;
+    border-radius: 4px;
+    padding: 8px 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+/* Contenedor del input */
+.bu-container {
+    position: fixed;
+    top: 38px; /* Debajo del icono */
+    right: 32px;
+    z-index: 999;
+    /* background-color: #ffffff; */
+    /* border: 1px solid #dddbda; */
+    /* border-radius: 4px; */
+    padding: 1px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    display: none; /* Oculto por defecto */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none; /* Evitar interacción cuando está oculto */
+}
+
+/* Mostrar el contenedor al hacer hover sobre el icono */
+.bu-toggle:hover + .bu-container,
+.bu-container:hover {
+    display: block;
+        opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* Permitir interacción cuando está visible */
+}
+
+.bu-container input {
+    width: 100%;
+    padding: 7px;
+    border: 2px solid var(--sf-color-tab-unselected);
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--sf-color-tab-selected);
+    background-color: var(--sf-color-background);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.bu-container input:focus {
+    border-color: #1589ee;
+    box-shadow: inset 0 0 5px rgba(21, 137, 238, 0.5);
+}
+
+/* Ocultar el icono cuando el menú de la hamburguesa está oculto */
+.bu-toggle.hidden {
+    opacity: 0;
+    pointer-events: none; /* Desactivar interacción */
 }
 
 /*--------------------------------------------------*/
@@ -172,7 +240,7 @@ nav.fixed-nav {
 .hamburger-icon {
     font-size: 12px;
     cursor: pointer;
-    background-color: var(--primary-dark-color);
+    background-color: var(--sf-color-tab-selected);
     color: white;
     padding: 10px;
     border-radius: 0 0 0 5px;
@@ -186,31 +254,50 @@ nav.fixed-nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 37px;
+    top: 36px;
     right: 0;
+    z-index: 1000;
     background-color: var(--light-background-color);
     border: 1px solid var(--border-color);
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .dropdown-content a {
-    padding: 10px 20px;
+    padding: 10px 15px;
+    margin: 1px 0;
     text-decoration: none;
     display: block;
+    transition: box-shadow 0.2s ease-in-out;
     color: var(--text-color);
 }
 
 .dropdown-content a.active {
-    background-color: var(--primary-dark-color);
-    color: white;
+    color: var(--sf-color-tab-selected-strong);
+    box-shadow: inset 3px 0 var(--sf-color-tab-selected-strong);
+}
+
+.dropdown-content a.active:first-child {
+    border-radius: 5px 0 0 0;
+}
+
+.dropdown-content a.active:last-child {
+    border-radius: 0 0 0 5px;
 }
 
 .dropdown-content a:hover {
-    background-color: var(--hover-color);
-    color: white;
+    color: var(--sf-color-tab-selected);
+    box-shadow: inset 3px 0 var(--sf-color-tab-selected);
+}
+
+.dropdown-content a:hover:first-child {
+    border-radius: 5px 0 0 0;
+}
+
+.dropdown-content a:hover:last-child {
+    border-radius: 0 0 0 5px;
 }
 
 /* Mostrar el dropdown cuando el ratón está sobre el icono de hamburguesa */
@@ -328,7 +415,7 @@ pre {
     bottom: 0;
     right: 0;
     padding: 7px 11px;
-    background-color: var(--primary-color);
+    background-color: var(--sf-color-button);
     color: white;
     border: none;
     border-radius: 8px 8px 0 8px;
@@ -364,6 +451,36 @@ footer {
     text-align: center;
     padding: 8px 0;
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el input */
+footer input {
+    padding: 8px 12px;
+    border: 1px solid #dddbda;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #080707;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    /* min-width: 20px; Ancho mínimo para evitar que el input sea demasiado pequeño */
+}
+
+footer input:focus {
+    border-color: #1589ee;
+    box-shadow: 0 0 5px rgba(21, 137, 238, 0.5);
+}
+
+footer input::placeholder {
+    color: #706e6b;
+    opacity: 1;
+}
+
+footer label {
+    font-weight: bold;
+    color: #ffffff;
+    margin-right: 10px;
 }

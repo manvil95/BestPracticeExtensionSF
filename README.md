@@ -37,9 +37,13 @@
 
 ## 📸 Screenshots
 
-| **Main** | **Tab** | **Business** | **Business Text** | **Menu** |
-|----------|---------|--------------|-------------------|----------|
-| <img title="main" src="./demo/main.png" width="230px"> | <img title="tab" src="./demo/tab.png" width="200px"> | <img title="business" src="./demo/business.png" width="200px"> | <img title="business_text" src="./demo/business_text.png" width="200px"> | <img title="menu" src="./demo/menu.png" width="200px"> |
+| **Main** | **Tab** |
+|----------|---------|
+| <img title="main" src="./demo/main.png" width="360px"> | <img title="tab" src="./demo/tab.png" width="320"> |
+
+| **Business** | **Business Text** | **Menu** |
+|--------------|-------------------|----------|
+| <img title="business" src="./demo/business.png" width="320px"> | <img title="business_text" src="./demo/business_text.png" width="320px"> | <img title="menu" src="./demo/menu.png" width="320px"> |
 
 ## 🤝 Contributing
 

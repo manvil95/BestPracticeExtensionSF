@@ -117,8 +117,8 @@ code{
     z-index: 999;
     background-color: var(--sf-color-tab-selected);
     color: white;
-    border: 1px solid #dddbda;
-    border-radius: 4px;
+    /* border: 1px solid #dddbda; */
+    border-radius: 5px 0 0 5px;
     padding: 8px 6px;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

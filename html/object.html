@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Objects & Related Metadata</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <a href="object.html" class="nav-button active">Objects</a>
+                <a href="metadata.html" class="nav-button">Metadata</a>
+                <a href="apex.html" class="nav-button">Apex & LWC</a>
+                <a href="branching.html" class="nav-button">Branching</a>
+            </nav>
+            <div id="hamburgerMenu" class="hamburger-menu hamburguer-menu-fadeOut">
+                <div class="hamburger-icon">&#9776;</div> <!-- Ícono de hamburguesa -->
+                <div class="dropdown-content">
+                    <a href="object.html" class="active">Objects</a>
+                    <a href="metadata.html">Metadata</a>
+                    <a href="apex.html">Apex & LWC</a>
+                    <a href="branching.html">Branching</a>
+                </div>
+            </div>
+            <!-- Icono desplegable -->
+            <div class="bu-toggle hidden" id="buToggle">BU</div>
+            <!-- Contenedor del input -->
+            <div class="bu-container" id="buContainer">
+                <input type="text" id="bu-input" placeholder="Enter business unit">
+            </div>
+            <h1>Objects & Related Metadata</h1>
+            <h2>Custom Fields</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>API NAME</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Auto Number</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>AUT</b>_AutoNumberField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>ADR</b>_AddressField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Boolean</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>FLG</b>_BooleanField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Currency</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>DIV</b>_CurrencyField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Date & DateTime</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>DAT</b>_DateTimeField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>EMA</b>_EmailField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Formula</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>FOR</b>_FormulaField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Geolocation</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>GEO</b>_GeolocationField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Lookup</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>LKP</b>_LookUpField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Master-Detail Relationship</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>MDR</b>_MasterDetailField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Multi-Select Picklist</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>MSE</b>_MultiSelectField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Number</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>NUM</b>_NumberField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Percent</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>PER</b>_PercentField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>TEL</b>_PhoneField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Picklist</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>SEL</b>_PicklistField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Roll-Up Summary</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>SUM</b>_RollUpSummaryField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Text</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>TXT</b>_TextField__c</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>HOR</b>_TimeField__c</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>URL</b>_URLField__c</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Related Metadata</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TYPE</th>
+                        <th>API NAME / LABEL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Compact Layout</td>
+                        <td>
+                            <b><span data-bu>{{BU}}</span></b>_LayoutName_<b>CompactLayout</b><hr>
+                            <b><span data-bu>{{BU}}</span></b> Compact Name <b>Compact Layout</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Layout</td>
+                        <td><b><span data-bu>{{BU}}</span></b> Page Name <b>Layout</b></b></td>
+                    </tr>
+                    <tr>
+                        <td>Lightning Page</td>
+                        <td>
+                            <b><span data-bu>{{BU}}</span></b>_PageName_<b>LightningPage</b><br>
+                            <b><span data-bu>{{BU}}</span></b>_<b>LP</b>_PageName<br><hr>
+                            <b><span data-bu>{{BU}}</span></b> Page Name <b>Lightning Page</b></td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>List View</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_<b>LV</b>_ListViewName
+                    </tr>
+                    <tr>
+                        <td>Object Name</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_ObjectName</td>
+                    </tr>
+                    <tr>
+                        <td>Record Type</td>
+                        <td><b><span data-bu>{{BU}}</span></b>_TypeName<b>_RecordType</b></td>
+                    </tr>
+                    <tr>
+                        <td>Search Layout</td>
+                        <td><b><span data-bu>{{BU}}</span></b> Search Name <b>Search Layout</b></td>
+                    </tr>
+                    <tr>
+                        <td>Validation Rule</td>
+                        <td>
+                            <b><span data-bu>{{BU}}</span></b>_ValidationRuleName_<b>ValidationRule</b><hr>
+                            <b><span data-bu>{{BU}}</span></b> Validation Rule Name
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button id="backToTop" class="back-to-top fadeOut">↑</button>
+        <script src="../service.js"></script> 
+        <footer>
+            <p>© Manuel Villén, 2025</p>
+        </footer>
+    </body>
+</html>

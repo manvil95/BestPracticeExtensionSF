@@ -3,11 +3,10 @@
 > [!IMPORTANT]  
 > A browser extension designed to help Salesforce developers and teams follow best practices and naming conventions. Organized into intuitive tabs, this tool provides quick access to guidelines, examples, and strategies for maintaining high-quality and maintainable Salesforce projects.
 
-
 ## ✨ Features
 
 - **📦 Objects & Related Metadata**  
-  Naming conventions and best practices for Salesforce objects, fields, relationships, and related metadata.
+  Naming conventions and best practices for Salesforce objects, fields, relationships, and related metadata with dynamic {BU} placeholder support.
 
 - **📄 Metadata**  
   Guidelines for naming and organizing custom metadata types, labels, and other metadata components.
@@ -17,6 +16,23 @@
 
 - **🌿 Branching Strategies**  
   Recommended branching strategies for version control in Salesforce projects, including Git workflows and deployment tips.
+
+## 🌐 Browser Compatibility
+
+Officially supported browsers:
+
+- ✅ **Microsoft Edge** (latest version)
+- ✅ **Google Chrome** (latest version)
+
+> [!NOTE]
+> This extension has been primarily developed and tested for Chromium-based browsers (Edge/Chrome).
+
+While it may work in other browsers, full functionality is not guaranteed in:
+
+- *Firefox*
+- *Safari*
+- *Opera*
+- *Other non-Chromium browsers*
 
 
 ## 🚀 Installation
@@ -31,8 +47,11 @@
 
 ## 🛠️ Usage
 
+**Core Functionality**:
+
 - Click the extension icon in your browser's toolbar to open the popup.
 - Navigate through the tabs to access the relevant best practices and naming conventions.
+- Business Unit (BU) placeholder automatically propagates
 - Use the examples and guidelines to improve your Salesforce development workflow.
 
 ## 📸 Screenshots
@@ -79,7 +98,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For questions or feedback, feel free to:
 
 - Open an issue in this repository.
-- Contact the maintainers directly.
+- Contact the maintainers directly via email: pateandodesarrollos@gmail.com
 
 ---
 

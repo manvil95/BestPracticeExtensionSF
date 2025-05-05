@@ -21,12 +21,12 @@
     --sf-color-title-vivid: #0B6AFE;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'NotoSans';
     src: url('../fonts/NotoSans-Regular.ttf') format(truetype);
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 /*--------------------------------------------------*/
 /*------------  M O D A L  S T Y L E S  ------------*/
@@ -48,7 +48,7 @@ html {
 }
 
 body {
-    font-family: 'NotoSans', sans-serif;
+    font-family: sans-serif;
     background-color: var(--sf-color-background-section);
     color: var(--text-color);
     margin: 0;

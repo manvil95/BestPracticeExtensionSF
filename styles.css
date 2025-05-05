@@ -1,10 +1,6 @@
 :root {
-    --background-color-body: #eef2fa; /* Color de fondo suave basado en el primario */
-    --background-color: #dae2f0; /* Color de fondo más oscuro */
     --light-background-color: #f2f7fd; /* Tono más claro para el fondo */
     --text-color: #333; /* Color de texto primario */
-    --primary-color: #6485c1; /* Color primario */
-    --primary-dark-color: #4f6ca0; /* Color primario más oscuro */
     --hover-table-color: #ccd9f3; /* Color primario */
     --hover-color: #3e5780; /* Color para hover, más oscuro */
     --border-color: #b8c7e0; /* Color de borde derivado del primario */
@@ -21,13 +17,6 @@
     --sf-color-title-vivid: #0B6AFE;
 }
 
-/* @font-face {
-    font-family: 'NotoSans';
-    src: url('../fonts/NotoSans-Regular.ttf') format(truetype);
-    font-weight: normal;
-    font-style: normal;
-} */
-
 /*--------------------------------------------------*/
 /*------------  M O D A L  S T Y L E S  ------------*/
 /*--------------------------------------------------*/
@@ -37,7 +26,6 @@ html, body {
     padding: 0;
     height: max-content;
     width: 500px;
-    user-select: none; /* Desactiva la selección de texto */
 }
 
 html {
@@ -45,6 +33,7 @@ html {
     -ms-overflow-style: none;
     scrollbar-width: none;
     border-radius: 8px;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -52,8 +41,6 @@ body {
     background-color: var(--sf-color-background-section);
     color: var(--text-color);
     margin: 0;
-    /* border-radius: 8px; */
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .container{
@@ -117,7 +104,6 @@ code{
     z-index: 999;
     background-color: var(--sf-color-tab-selected);
     color: white;
-    /* border: 1px solid #dddbda; */
     border-radius: 5px 0 0 5px;
     padding: 8px 6px;
     cursor: pointer;
@@ -129,13 +115,9 @@ code{
 .bu-container {
     position: fixed;
     top: 38px; /* Debajo del icono */
-    right: 32px;
+    right: 30px;
     z-index: 999;
-    /* background-color: #ffffff; */
-    /* border: 1px solid #dddbda; */
-    /* border-radius: 4px; */
     padding: 1px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     display: none; /* Oculto por defecto */
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 0;
@@ -147,14 +129,14 @@ code{
 .bu-toggle:hover + .bu-container,
 .bu-container:hover {
     display: block;
-        opacity: 1;
+    opacity: 1;
     transform: translateY(0);
     pointer-events: auto; /* Permitir interacción cuando está visible */
 }
 
 .bu-container input {
     width: 100%;
-    padding: 7px;
+    padding: 5px;
     border: 2px solid var(--sf-color-tab-unselected);
     border-radius: 4px;
     font-size: 14px;
@@ -173,6 +155,10 @@ code{
 .bu-toggle.hidden {
     opacity: 0;
     pointer-events: none; /* Desactivar interacción */
+}
+
+#bu-input {
+    width: 120px;
 }
 
 /*--------------------------------------------------*/
@@ -221,7 +207,6 @@ nav.fixed-nav {
 /*-----------  H A M B U R G E R  M E N U  ---------*/
 /*--------------------------------------------------*/
 .hamburger-menu {
-    /* display: none; */
     position: fixed;
     top: 0px;
     right: 0px;
@@ -445,7 +430,6 @@ pre {
 /*-----------  F O O T E R  S T Y L E S  -----------*/
 /*--------------------------------------------------*/
 footer {
-    /* background-color: var(--primary-dark-color); */
     background-color: var(--sf-color-tab-unselected);
     color: white;
     text-align: center;
@@ -455,7 +439,6 @@ footer {
     box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para el input */
 footer input {
     padding: 8px 12px;
     border: 1px solid #dddbda;
@@ -466,7 +449,6 @@ footer input {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     outline: none;
-    /* min-width: 20px; Ancho mínimo para evitar que el input sea demasiado pequeño */
 }
 
 footer input:focus {

@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const backToTopButton = document.getElementById("backToTop");
-    const nav = document.querySelector("nav");
-    const hamburgerMenu = document.getElementById("hamburgerMenu");
-    const buInput = document.getElementById("bu-input");
-    const buToggle = document.getElementById("buToggle");
-    const buContainer = document.getElementById("buContainer");
+    const backToTopButton   = document.getElementById("backToTop");
+    const nav               = document.querySelector("nav");
+    const hamburgerMenu     = document.getElementById("hamburgerMenu");
+    const buInput           = document.getElementById("bu-input");
+    const buToggle          = document.getElementById("buToggle");
+    const buContainer       = document.getElementById("buContainer");
         
     // Almacenar el valor original de {{BU}} en un atributo data-original
     const buElements = document.querySelectorAll("[data-bu]");

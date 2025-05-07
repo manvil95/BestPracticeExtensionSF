@@ -36,8 +36,15 @@ jobs:
           git archive --format zip --prefix="${REPO_NAME}/" --output "${REPO_NAME}-${TAG_NAME}.zip" HEAD
           echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
           echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
-            
+      - name: Debug Token Scope
+        run: |
+          echo "Testing token scope..."
+          curl -H "Authorization: token ${{ secrets.TOKEN }}" https://api.github.com/repos/${{ github.repository }}
+          echo "Token scope test completed."
+      
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
           files: "${{ env.REPO_NAME }}-${{ env.TAG_NAME }}.zip"
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}

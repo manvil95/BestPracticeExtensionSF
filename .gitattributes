@@ -1,3 +1,5 @@
 /demo/* export-ignore
 .gitignore export-ignore
 .github/* export-ignore
+.gitattributes export-ignore
+manifest.json export-ignore

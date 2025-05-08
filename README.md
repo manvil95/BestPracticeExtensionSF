@@ -1,4 +1,4 @@
-# <img title="SF Best Practices" src="./icons/icon.png" width="80px"> SF Best Practices Browser Extension
+# <img title="SF Best Practices" alt="App logo" src="./icons/icon.png" width="80px"> SF Best Practices Browser Extension
 
 > [!IMPORTANT]  
 > A browser extension designed to help Salesforce developers and teams follow best practices and naming conventions. Organized into intuitive tabs, this tool provides quick access to guidelines, examples, and strategies for maintaining high-quality and maintainable Salesforce projects.
@@ -17,23 +17,33 @@
 - **🌿 Branching Strategies**  
   Recommended branching strategies for version control in Salesforce projects, including Git workflows and deployment tips.
 
+- **💡 BU Replacement System**  
+  Dynamic replacement of placeholder text with user-specified business unit identifier.
+
+## 🎨 Dynamic UI Behaviors
+
+The extension implements several dynamic UI behaviors to enhance the user experience:
+
+1. **Scroll-Based Navigation Changes**  
+  The main navigation bar fades out when scrolling down, replaced by a compact hamburger menu
+2. **Back-to-Top Button**  
+  Appears when scrolling down to provide easy navigation back to the top
+3. **Business Unit Replacement**  
+  Dynamically replaces {{BU}} placeholders with user-provided values
+
 ## 🌐 Browser Compatibility
-
-Officially supported browsers:
-
-- ✅ **Microsoft Edge** (latest version)
-- ✅ **Google Chrome** (latest version)
 
 > [!NOTE]
 > This extension has been primarily developed and tested for Chromium-based browsers (Edge/Chrome).
 
-While it may work in other browsers, full functionality is not guaranteed in:
-
-- *Firefox*
-- *Safari*
-- *Opera*
-- *Other non-Chromium browsers*
-
+| Browser                     | Compatibility Status|
+|-----|-----|
+| Microsoft Edge              | ✅ Fully supported (latest version)|
+| Google Chrome               | ✅ Fully supported (latest version)|
+| Firefox                     | ⚠️ Not officially supported |
+| Safari                      | ⚠️Not officially supported |
+| Opera                       | ⚠️ Not officially supported |
+| Other non-Chromium browsers | ⚠️ Not officially supported |
 
 ## 🚀 Installation
 

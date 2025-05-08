@@ -1,4 +1,4 @@
-# <img title="SF Best Practices" src="./icons/icon.png" width="80px"> SF Best Practices Browser Extension
+# <img title="SF Best Practices" alt="App logo" src="./icons/icon.png" width="80px"> SF Best Practices Browser Extension
 
 > [!IMPORTANT]  
 > A browser extension designed to help Salesforce developers and teams follow best practices and naming conventions. Organized into intuitive tabs, this tool provides quick access to guidelines, examples, and strategies for maintaining high-quality and maintainable Salesforce projects.

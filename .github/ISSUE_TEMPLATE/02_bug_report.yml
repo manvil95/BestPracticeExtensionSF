@@ -15,7 +15,7 @@ body:
       options:
         - label: I have searched the [Auth0 Community](https://community.auth0.com) forums and have not found a suitable solution or answer.
           required: true
-        - label: I agree to the terms within the [Code of Conduct](https://github.com/manvil95/BestPracticeExtensionSF/blob/master/CODE-OF-CONDUCT.md).
+        - label: I agree to the terms within the [Code of Conduct](https://github.com/manvil95/BestPracticeExtensionSF/blob/main/CODE-OF-CONDUCT.md).
           required: true
 
   - type: textarea

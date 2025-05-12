@@ -1,0 +1,19 @@
+name: 🧩 Codebase improvement
+description: Provide your feedback for the existing codebase. Suggest a better solution for algorithms, development tools, etc.
+labels: ["enhancement"]
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide a clear and concise description of the enhancement.
+    validations:
+      required: true
+  
+  - type: textarea
+    id: example
+    attributes:
+      label: Enhancement
+      description: Provide a code example to apply for this enhancement.
+    validations:
+      required: true

@@ -42,12 +42,11 @@ Before [creating an issue](https://help.github.com/en/github/managing-your-work-
 
 If you discover a security vulnerability, please do not open a public issue. Instead, contact us directly following our [Security Policy](https://github.com/manvil95/BestPracticeExtensionSF/blob/main/SECURITY.md).
 
-### :beetle: Bug Reports and Other Issues
+### :bug: Bug Reports and Other Issues
 
 A great way to contribute to the project is to send a detailed issue when you encounter a problem. We always appreciate a well-written, thorough bug report. :v:
 
 In short, since you are most likely a developer, **provide a ticket that you would like to receive**.
-
 
 - **Do not open a duplicate issue!** Search through existing issues to see if your issue has previously been reported. If your issue exists, comment with any additional information you have. You may simply note "I have this problem too", which helps prioritize the most common problems and requests. 
 

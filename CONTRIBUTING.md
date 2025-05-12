@@ -22,7 +22,7 @@
 
 ## :book: Code of Conduct
 
-Please review our [Code of Conduct](https://github.com/manvil95/BestPracticeExtensionSF/blob/master/CODE_OF_CONDUCT.md). It is in effect at all times, and we expect it to be honored by everyone who contributes to this project.
+Please review our [Code of Conduct](https://github.com/manvil95/BestPracticeExtensionSF/blob/main/CODE_OF_CONDUCT.md). It is in effect at all times, and we expect it to be honored by everyone who contributes to this project.
 
 ## :bulb: Asking Questions
 
@@ -40,7 +40,7 @@ Before [creating an issue](https://help.github.com/en/github/managing-your-work-
 
 ### :lock: Reporting Security Issues
 
-If you discover a security vulnerability, please do not open a public issue. Instead, contact us directly following our [Security Policy](https://github.com/manvil95/BestPracticeExtensionSF/blob/master/SECURITY.md).
+If you discover a security vulnerability, please do not open a public issue. Instead, contact us directly following our [Security Policy](https://github.com/manvil95/BestPracticeExtensionSF/blob/main/SECURITY.md).
 
 ### :beetle: Bug Reports and Other Issues
 

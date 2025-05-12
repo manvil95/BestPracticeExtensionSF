@@ -1,4 +1,4 @@
-By submitting a PR to this repository, you agree to the terms within the [Code of Conduct](https://github.com/manvil95/BestPracticeExtensionSF/blob/master/CODE-OF-CONDUCT.md). Please see the [contributing guidelines](https://github.com/auth0/open-source-template/blob/master/CONTRIBUTING.md) for how to create and submit a high-quality PR for this repo.
+By submitting a PR to this repository, you agree to the terms within the [Code of Conduct](https://github.com/manvil95/BestPracticeExtensionSF/blob/main/CODE-OF-CONDUCT.md). Please see the [contributing guidelines](https://github.com/auth0/open-source-template/blob/main/CONTRIBUTING.md) for how to create and submit a high-quality PR for this repo.
 
 ### Description
 
@@ -34,4 +34,4 @@ By submitting a PR to this repository, you agree to the terms within the [Code o
 
 - [ ] I have added documentation for new/changed functionality in this PR.
 - [ ] All active GitHub checks for tests, formatting, and security are passing.
-- [ ] The correct base branch is being used, if not `master`.
+- [ ] The correct base branch is being used, if not `main`.
